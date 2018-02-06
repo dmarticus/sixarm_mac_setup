@@ -28,7 +28,7 @@ defaults write NSGlobalDomain AppleFontSmoothing -int 2
 defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
 
 # Use “natural” (Lion-style) scrolling.
-defaults write NSGlobalDomain com.apple.swipescrolldirection -bool true
+defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
 
 # Disable press-and-hold for keys in favor of key repeat.
 defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
@@ -87,9 +87,9 @@ defaults write com.apple.dock expose-animation-duration -float 0
 
 ## Screen Saver
 
-# Require password immediately after sleep or screen saver begins.
+# Require password 5s after sleep or screen saver begins.
 defaults write com.apple.screensaver askForPassword -int 1
-defaults write com.apple.screensaver askForPasswordDelay -int 0
+defaults write com.apple.screensaver askForPasswordDelay -int 5
 
 
 ## iTunes

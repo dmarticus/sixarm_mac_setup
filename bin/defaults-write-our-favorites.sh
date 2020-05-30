@@ -4,10 +4,9 @@
 # These are gathered from many different sources.
 #
 # Thanks:
-#   * mathias bynens
 #   * https://github.com/stianeikeland/dotfiles/edit/master/bin/sanemacdefaults.sh
-#   * https://github.com/mathiasbynens/dotfiles
 #   * https://www.taniarascia.com/setting-up-a-brand-new-mac-for-development/
+#   * http://dreynaud.fail/new-mac-setup/
 
 
 ## NSGlobalDomain
@@ -27,11 +26,8 @@ defaults write NSGlobalDomain AppleFontSmoothing -int 2
 # Always show scrollbars.
 defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
 
-# Use “natural” (Lion-style) scrolling.
-defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
-
-# Disable press-and-hold for keys in favor of key repeat.
-defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
+# Disable press-and-hold for keys in favor of key repeat. (disabled... I still like press-and-hold for foreign characters)
+#defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 
 # Set a blazingly fast keyboard repeat rate.
 defaults write NSGlobalDomain KeyRepeat -int 0
@@ -60,6 +56,9 @@ defaults write com.apple.finder ShowStatusBar -bool true
 # Show path bar.
 defaults write com.apple.finder ShowPathbar -bool true
 
+# Show hidden files
+defaults write com.apple.finder AppleShowAllFiles YES
+
 # Allow selection of text in quicklook windows.
 defaults write com.apple.finder QLEnableTextSelection -bool true
 
@@ -68,9 +67,6 @@ defaults write com.apple.finder QLEnableTextSelection -bool true
 
 # Make Dock icons of hidden applications translucent.
 defaults write com.apple.dock showhidden -bool true
-
-# Enable iTunes track notifications in the Dock.
-defaults write com.apple.dock itunes-notifications -bool true
 
 # Show indicator lights for open applications in the Dock.
 defaults write com.apple.dock show-process-indicators -bool true
@@ -92,15 +88,6 @@ defaults write com.apple.screensaver askForPassword -int 1
 defaults write com.apple.screensaver askForPasswordDelay -int 5
 
 
-## iTunes
-
-# Disable the Ping sidebar in iTunes.
-defaults write com.apple.iTunes disablePingSidebar -bool true
-
-# Disable all the other Ping stuff in iTunes.
-defaults write com.apple.iTunes disablePing -bool tr
-
-
 ## Safari
 
 # Enable Safari’s debug menu.
@@ -111,12 +98,6 @@ defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
 
 # Use AirDrop over every interface.
 defaults write com.apple.NetworkBrowser BrowseAllInterfaces 1
-
-
-## Terminal
-
-# Only use UTF-8 in Terminal.app.
-defaults write com.apple.terminal StringEncodings -array 4
 
 
 ## Desktop Services
@@ -134,7 +115,7 @@ defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int
 ## Press And Hold
 
 # Disable press-and-hold for keys in favor of key repeat.
-defaults write -g ApplePressAndHoldEnabled -bool false
+#defaults write -g ApplePressAndHoldEnabled -bool false
 
 
 ## Quick Look
@@ -144,14 +125,6 @@ defaults write -g ApplePressAndHoldEnabled -bool false
 # https://github.com/sindresorhus/quick-look-plugins
 defaults write org.n8gray.QLColorCode hlTheme pablo
 defaults write org.n8gray.QLColorCode font Monaco
-
-
-## Tap to click
-
-# Enable tap to click (Trackpad), also for login menu.
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
-defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
-defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 
 
 ## Flags
